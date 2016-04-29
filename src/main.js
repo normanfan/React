@@ -1,9 +1,7 @@
-var mountNode = document.getElementById('r');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Hello} from './partial';
 
-var Hello = React.createClass({
-    render: function() {
-        return <div>Hello React</div>;
-    }
-});
+var mountNode = document.getElementById('r');
 
 ReactDOM.render(<Hello/>, mountNode);
