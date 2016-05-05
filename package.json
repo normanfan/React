@@ -4,7 +4,8 @@
   "description": "练习ES6和React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,11 @@
     "url": "https://github.com/JasonBai007/ES6/issues"
   },
   "homepage": "https://github.com/JasonBai007/ES6#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
+  },
   "dependencies": {
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",

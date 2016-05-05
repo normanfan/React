@@ -1,8 +1,7 @@
 var webpack = require('webpack');
 module.exports = {
     entry: {
-        main: ['./src/main.js'],
-        partial: ['./src/partial.js']
+        main: ['./src/main.js']
     },
     output: {
         path: './build',
@@ -13,19 +12,17 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.js$/,
+            test: /\.(js|jsx)$/,
             exclude:/node_modules/,
-            loader: 'babel',
-            query:{
-                presets: ['react', 'es2015']
-            }
-        }, {
-            test: /\.jsx$/,
+            loader: 'babel'                  
+        },{
+            test: /\.css$/,
             exclude:/node_modules/,
-            loader: 'babel',
-            query:{
-                presets: ['react', 'es2015']
-            }
+            loader: 'style-loader!css-loader'
+        },{
+            test: /\.(png|jpg)$/,
+            exclude:/node_modules/,
+            loader: 'url-loader?limit=8192'
         }]
     }
 };
