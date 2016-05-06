@@ -63,13 +63,15 @@
 
 	var _partial = __webpack_require__(169);
 
-	var _partial2 = __webpack_require__(174);
+	var _partial2 = _interopRequireDefault(_partial);
 
-	var _partial3 = _interopRequireDefault(_partial2);
+	var _partial3 = __webpack_require__(174);
 
-	var _partial4 = __webpack_require__(175);
+	var _partial4 = _interopRequireDefault(_partial3);
 
-	var _partial5 = _interopRequireDefault(_partial4);
+	var _partial5 = __webpack_require__(175);
+
+	var _partial6 = _interopRequireDefault(_partial5);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -77,10 +79,10 @@
 	var mountNode2 = document.getElementById('john');
 	var mountNode3 = document.getElementById('childrenlist');
 
-	_reactDom2.default.render(_react2.default.createElement(_partial.Hello, { uppercase: '首字母要大写' }), mountNode);
-	_reactDom2.default.render(_react2.default.createElement(_partial3.default, null), mountNode2);
+	_reactDom2.default.render(_react2.default.createElement(_partial2.default, { uppercase: '首字母要大写' }), mountNode);
+	_reactDom2.default.render(_react2.default.createElement(_partial4.default, null), mountNode2);
 	_reactDom2.default.render(_react2.default.createElement(
-	                    _partial5.default,
+	                    _partial6.default,
 	                    null,
 	                    _react2.default.createElement(
 	                                        'span',
@@ -20191,7 +20193,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.Hello = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
 
@@ -20205,22 +20208,41 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Hello = exports.Hello = _react2.default.createClass({
-	    displayName: 'Hello',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            '注意组件名的',
-	            _react2.default.createElement(
-	                'span',
-	                { className: 'red' },
-	                this.props.uppercase
-	            )
-	        );
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Hello = function (_React$Component) {
+	    _inherits(Hello, _React$Component);
+
+	    function Hello() {
+	        _classCallCheck(this, Hello);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Hello).apply(this, arguments));
 	    }
-	});
+
+	    _createClass(Hello, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                '注意组件名的',
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'red' },
+	                    this.props.uppercase
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Hello;
+	}(_react2.default.Component);
+
+	exports.default = Hello;
 
 /***/ },
 /* 170 */
@@ -20590,6 +20612,10 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _partial = __webpack_require__(169);
+
+	var _partial2 = _interopRequireDefault(_partial);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20608,8 +20634,15 @@
 	    }
 
 	    _createClass(Hehe, [{
+	        key: 'alertMe',
+	        value: function alertMe() {
+	            alert("你刚才点了我一下。。。");
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+
 	            var styleObj = {
 	                color: 'red'
 	            };
@@ -20627,13 +20660,14 @@
 	                    { style: styleObj },
 	                    'class Photo extends React.Component '
 	                ),
+	                _react2.default.createElement(_partial2.default, { uppercase: '首字母要大写again' }),
 	                _react2.default.createElement(
 	                    'ul',
 	                    null,
 	                    names.map(function (name) {
 	                        return _react2.default.createElement(
 	                            'li',
-	                            { key: name },
+	                            { key: name, onClick: _this2.alertMe },
 	                            name
 	                        );
 	                    })
@@ -20678,25 +20712,51 @@
 	var Father = function (_React$Component) {
 	    _inherits(Father, _React$Component);
 
-	    function Father() {
+	    function Father(props) {
 	        _classCallCheck(this, Father);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Father).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Father).call(this, props));
+
+	        _this.handleClick = _this.handleClick.bind(_this);
+	        _this.changeInput = _this.changeInput.bind(_this);
+	        _this.state = { text: '' };
+	        return _this;
 	    }
 
 	    _createClass(Father, [{
+	        key: 'changeInput',
+	        value: function changeInput(e) {
+	            this.setState({ text: e.target.value });
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            this.refs.myInput.focus();
+	            this.refs.myInput.value = '';
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'ol',
+	                'div',
 	                null,
-	                _react2.default.Children.map(this.props.children, function (child) {
-	                    return _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        child
-	                    );
-	                })
+	                _react2.default.createElement(
+	                    'ol',
+	                    null,
+	                    _react2.default.Children.map(this.props.children, function (child) {
+	                        return _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            child
+	                        );
+	                    })
+	                ),
+	                _react2.default.createElement('input', { type: 'text', ref: 'myInput', value: this.state.text, onChange: this.changeInput }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { type: 'button', onClick: this.handleClick },
+	                    'RESET'
+	                )
 	            );
 	        }
 	    }]);

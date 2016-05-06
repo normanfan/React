@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Hello} from './partials/partial1';
+import Hello from './partials/partial1';
 import John from './partials/partial2';
 import Father from './partials/partial3';
 
