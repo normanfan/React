@@ -18,8 +18,8 @@ export default class Hehe extends React.Component {
         ];
         return (
             <div>
-                <div>在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：<span style={styleObj}>class Photo extends React.Component {}</span></div>
-                <Hello uppercase="我是被嵌套的组件一" />
+                <div>在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：<span style={styleObj}>{'class Photo extends React.Component {...}'}</span></div>
+                <Hello uppercase="被嵌套的组件一" />
                 <ul>
                     {
                         names.map(name => {

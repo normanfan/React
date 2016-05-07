@@ -81,6 +81,8 @@
 
 	var _timeCount2 = _interopRequireDefault(_timeCount);
 
+	__webpack_require__(180);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mountNode = document.getElementById('hello');
@@ -89,7 +91,7 @@
 	var todo = document.getElementById('todo');
 	var time = document.getElementById('time');
 
-	_reactDom2.default.render(_react2.default.createElement(_partial2.default, { uppercase: '首字母要大写' }), mountNode);
+	_reactDom2.default.render(_react2.default.createElement(_partial2.default, { uppercase: '组件一' }), mountNode);
 	_reactDom2.default.render(_react2.default.createElement(_partial4.default, null), mountNode2);
 	_reactDom2.default.render(_react2.default.createElement(_partial6.default, null), mountNode3);
 	_reactDom2.default.render(_react2.default.createElement(_todo2.default, null), todo);
@@ -20228,7 +20230,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                '组件的英文名称：',
+	                '我是：',
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'red' },
@@ -20658,10 +20660,10 @@
 	                    _react2.default.createElement(
 	                        'span',
 	                        { style: styleObj },
-	                        'class Photo extends React.Component '
+	                        'class Photo extends React.Component {...}'
 	                    )
 	                ),
-	                _react2.default.createElement(_partial2.default, { uppercase: '我是被嵌套的组件一' }),
+	                _react2.default.createElement(_partial2.default, { uppercase: '被嵌套的组件一' }),
 	                _react2.default.createElement(
 	                    'ul',
 	                    null,
@@ -20717,7 +20719,7 @@
 
 
 	// module
-	exports.push([module.id, "ul li {\r\n\tbackground: #66998E;\r\n\twidth: 20%;\r\n\tmargin-top: 10px;\r\n}\r\nul li:hover {\r\n\tcursor: pointer;\r\n\tbackground: #000;\r\n\tcolor: #fff;\r\n}", ""]);
+	exports.push([module.id, "ul {\r\n\tmargin: 0 auto;\r\n\twidth: 20%;\r\n}\r\nul li {\r\n\tbackground: #66998E;\r\n\tmargin-top: 10px;\r\n}\r\nul li:hover {\r\n\tcursor: pointer;\r\n\tbackground: #000;\r\n\tcolor: #fff;\r\n}", ""]);
 
 	// exports
 
@@ -20978,6 +20980,46 @@
 	}(_react2.default.Component);
 
 	exports.default = Timer;
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(181);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(173)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./main.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./main.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(172)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "body {\r\n\tmargin: 0 40px;\r\n}\r\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);
