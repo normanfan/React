@@ -6,9 +6,12 @@
 ```sh
 2.1.0
 ```
+### Features
+*fadfafa
+*fadfafa
+*fadfafa
 
 ### Usage
-
 > 1、安装依赖：$ npm install  
 > 2、编译文件：$ npm run build || $ webpack  
 > 3、启动服务：$ http-server  
