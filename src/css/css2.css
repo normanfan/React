@@ -1,0 +1,10 @@
+ul li {
+	background: #66998E;
+	width: 20%;
+	margin-top: 10px;
+}
+ul li:hover {
+	cursor: pointer;
+	background: #000;
+	color: #fff;
+}

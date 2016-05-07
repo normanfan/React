@@ -69,32 +69,31 @@
 
 	var _partial4 = _interopRequireDefault(_partial3);
 
-	var _partial5 = __webpack_require__(175);
+	var _partial5 = __webpack_require__(177);
 
 	var _partial6 = _interopRequireDefault(_partial5);
+
+	var _todo = __webpack_require__(178);
+
+	var _todo2 = _interopRequireDefault(_todo);
+
+	var _timeCount = __webpack_require__(179);
+
+	var _timeCount2 = _interopRequireDefault(_timeCount);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mountNode = document.getElementById('hello');
 	var mountNode2 = document.getElementById('john');
 	var mountNode3 = document.getElementById('childrenlist');
+	var todo = document.getElementById('todo');
+	var time = document.getElementById('time');
 
 	_reactDom2.default.render(_react2.default.createElement(_partial2.default, { uppercase: '首字母要大写' }), mountNode);
 	_reactDom2.default.render(_react2.default.createElement(_partial4.default, null), mountNode2);
-	_reactDom2.default.render(_react2.default.createElement(
-	                    _partial6.default,
-	                    null,
-	                    _react2.default.createElement(
-	                                        'span',
-	                                        null,
-	                                        '子节点一'
-	                    ),
-	                    _react2.default.createElement(
-	                                        'span',
-	                                        null,
-	                                        '子节点二'
-	                    )
-	), mountNode3);
+	_reactDom2.default.render(_react2.default.createElement(_partial6.default, null), mountNode3);
+	_reactDom2.default.render(_react2.default.createElement(_todo2.default, null), todo);
+	_reactDom2.default.render(_react2.default.createElement(_timeCount2.default, null), time);
 
 /***/ },
 /* 2 */
@@ -20229,7 +20228,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                '注意组件名的',
+	                '组件的英文名称：',
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'red' },
@@ -20616,6 +20615,8 @@
 
 	var _partial2 = _interopRequireDefault(_partial);
 
+	__webpack_require__(175);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20646,29 +20647,29 @@
 	            var styleObj = {
 	                color: 'red'
 	            };
-	            var names = Array.of(6, 23, 89);
+	            var names = [{ title: "列表一", id: 0 }, { title: "列表二", id: 1 }, { title: "列表三", id: 2 }];
 	            return _react2.default.createElement(
 	                'div',
 	                null,
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    '在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：'
+	                    '在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：',
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styleObj },
+	                        'class Photo extends React.Component '
+	                    )
 	                ),
-	                _react2.default.createElement(
-	                    'p',
-	                    { style: styleObj },
-	                    'class Photo extends React.Component '
-	                ),
-	                _react2.default.createElement(_partial2.default, { uppercase: '首字母要大写again' }),
+	                _react2.default.createElement(_partial2.default, { uppercase: '我是被嵌套的组件一' }),
 	                _react2.default.createElement(
 	                    'ul',
 	                    null,
 	                    names.map(function (name) {
 	                        return _react2.default.createElement(
 	                            'li',
-	                            { key: name, onClick: _this2.alertMe },
-	                            name
+	                            { key: name.id, onClick: _this2.alertMe },
+	                            name.title
 	                        );
 	                    })
 	                )
@@ -20683,6 +20684,46 @@
 
 /***/ },
 /* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(176);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(173)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./css2.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./css2.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(172)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "ul li {\r\n\tbackground: #66998E;\r\n\twidth: 20%;\r\n\tmargin-top: 10px;\r\n}\r\nul li:hover {\r\n\tcursor: pointer;\r\n\tbackground: #000;\r\n\tcolor: #fff;\r\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20740,18 +20781,8 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
-	                    'ol',
-	                    null,
-	                    _react2.default.Children.map(this.props.children, function (child) {
-	                        return _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            child
-	                        );
-	                    })
-	                ),
-	                _react2.default.createElement('input', { type: 'text', ref: 'myInput', value: this.state.text, onChange: this.changeInput }),
+	                _react2.default.createElement('input', { type: 'text', placeholder: '这是一个普通的输入框' }),
+	                _react2.default.createElement('input', { ref: 'myInput', value: this.state.text, onChange: this.changeInput }),
 	                _react2.default.createElement(
 	                    'button',
 	                    { type: 'button', onClick: this.handleClick },
@@ -20765,6 +20796,188 @@
 	}(_react2.default.Component);
 
 	exports.default = Father;
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// 列表组件
+
+	var List = function (_React$Component) {
+		_inherits(List, _React$Component);
+
+		function List() {
+			_classCallCheck(this, List);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+		}
+
+		_createClass(List, [{
+			key: 'render',
+			value: function render() {
+				var createItem = function createItem(item) {
+					return _react2.default.createElement(
+						'li',
+						{ key: item.id },
+						item.text
+					);
+				};
+				return _react2.default.createElement(
+					'ol',
+					null,
+					this.props.items.map(createItem)
+				);
+			}
+		}]);
+
+		return List;
+	}(_react2.default.Component);
+
+	// 输出组件整体，其中用到了列表组件
+
+
+	var Todo = function (_React$Component2) {
+		_inherits(Todo, _React$Component2);
+
+		function Todo(props) {
+			_classCallCheck(this, Todo);
+
+			var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(Todo).call(this, props));
+
+			_this2.handleSubmit = _this2.handleSubmit.bind(_this2);
+			_this2.onChange = _this2.onChange.bind(_this2);
+			_this2.state = {
+				items: [],
+				text: ''
+			};
+			return _this2;
+		}
+
+		_createClass(Todo, [{
+			key: 'onChange',
+			value: function onChange(e) {
+				this.setState({ text: e.target.value });
+			}
+		}, {
+			key: 'handleSubmit',
+			value: function handleSubmit(e) {
+				e.preventDefault();
+				var nextItems = this.state.items.concat([{ text: this.state.text, id: Date.now() }]);
+				var nextText = '';
+				this.setState({ items: nextItems, text: nextText });
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'h3',
+						null,
+						'TODO LIST'
+					),
+					_react2.default.createElement(List, { items: this.state.items }),
+					_react2.default.createElement(
+						'form',
+						{ onSubmit: this.handleSubmit },
+						_react2.default.createElement('input', { onChange: this.onChange, value: this.state.text }),
+						_react2.default.createElement(
+							'button',
+							null,
+							'Push #' + (this.state.items.length + 1)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Todo;
+	}(_react2.default.Component);
+
+	exports.default = Todo;
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Timer = function (_React$Component) {
+	    _inherits(Timer, _React$Component);
+
+	    function Timer() {
+	        _classCallCheck(this, Timer);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Timer).apply(this, arguments));
+	    }
+
+	    _createClass(Timer, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                '组件的英文名称：',
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'red' },
+	                    this.props.uppercase
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Timer;
+	}(_react2.default.Component);
+
+	exports.default = Timer;
 
 /***/ }
 /******/ ]);

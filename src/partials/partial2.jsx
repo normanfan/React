@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Hello from './partial1';
+import '../css/css2.css';
 
 export default class Hehe extends React.Component {
     alertMe() {
@@ -10,16 +11,19 @@ export default class Hehe extends React.Component {
         const styleObj = {
             color:'red'
         };
-        const names = Array.of(6,23,89);
+        const names = [
+            {title:"列表一",id:0},
+            {title:"列表二",id:1},
+            {title:"列表三",id:2}
+        ];
         return (
             <div>
-                <div>在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：</div>
-                <p style={styleObj}>class Photo extends React.Component {}</p>
-                <Hello uppercase="首字母要大写again" />
+                <div>在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：<span style={styleObj}>class Photo extends React.Component {}</span></div>
+                <Hello uppercase="我是被嵌套的组件一" />
                 <ul>
                     {
                         names.map(name => {
-                            return <li key={name} onClick={this.alertMe}>{name}</li>
+                            return <li key={name.id} onClick={this.alertMe}>{name.title}</li>
                         })
                     }                    
                 </ul>

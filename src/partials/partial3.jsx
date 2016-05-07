@@ -18,14 +18,8 @@ export default class Father extends React.Component {
     render() {
         return (
             <div>
-                <ol>
-                    {
-                        React.Children.map(this.props.children, function(child) {
-                            return <li>{child}</li>
-                        })
-                    }
-                </ol>
-                <input type="text" ref="myInput" value={this.state.text} onChange={this.changeInput}/>
+                <input type="text" placeholder="这是一个普通的输入框"/>                
+                <input ref="myInput" value={this.state.text} onChange={this.changeInput}/>
                 <button type="button" onClick={this.handleClick}>RESET</button>
             </div>
         );
