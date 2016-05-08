@@ -9,10 +9,11 @@
 ### Features
 * 开发环境的搭建和配置从无到有独立完成
 * 采用ES6的语法，进行模块化开发
+* [React/React Native 的ES5 ES6写法对照表](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
 
 ### Usage
 > 1、安装依赖：$ npm install  
-> 2、编译文件：$ npm run build / $ webpack  
+> 2、编译文件：$ npm run build (或者：$ webpack)  
 > 3、启动服务：$ http-server  
 
 License
