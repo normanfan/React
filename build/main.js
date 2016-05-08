@@ -20966,7 +20966,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                '组件的英文名称：',
+	                '组件的英文：',
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'red' },
