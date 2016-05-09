@@ -1,6 +1,6 @@
 # Profile
 > REACT&ES6开发练习模板  
-> 技术栈：React + ReactDOM + ES6 + Bootstrap + Babel + Webpack + Npm
+> 技术栈：React + ReactDOM + ES6 + Bootstrap + Babel + Webpack + NPM
 
 ### Version
 ```sh
