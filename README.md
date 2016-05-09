@@ -1,10 +1,10 @@
 # Profile
 > REACT&ES6开发练习模板  
-> 技术栈：React + ReactDOM + ES6 + Bootstrap + Babel + Webpack  
+> 技术栈：React + ReactDOM + ES6 + Bootstrap + Babel + Webpack + Npm
 
 ### Version
 ```sh
-2.1.0
+2.0.0
 ```
 ### Features
 * 开发环境的搭建和配置从无到有独立完成
