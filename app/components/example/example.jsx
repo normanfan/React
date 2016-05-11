@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*练习组件*/
+/*ES6编写组件练习*/
 
 export default class Example extends React.Component {
 
@@ -21,14 +21,14 @@ export default class Example extends React.Component {
 
 	//默认props 在组件类创建的时候调用一次，然后返回值被缓存下来
 	static defaultProps = {
-		autoPlay: false,
-		maxLoops: 200,
-		num: 100
+		max: 200,
+		min: 100
 	}
 
 	//默认约束
 	static propTypes = {
-		num: React.PropTypes.number
+		min: React.PropTypes.number,
+		max: React.PropTypes.number
 	}
 
 	//静态方法
@@ -37,7 +37,7 @@ export default class Example extends React.Component {
 	}
 
 	//事件处理函数
-	btnClick() {
+	btnClick = () => {
 		console.log(this); //this为该组件类
 		console.log(this.refs.tex); //this.refs.tex为组件里面索引为tex的
 		this.setState({
@@ -50,7 +50,11 @@ export default class Example extends React.Component {
 		Example.customMethod("这里调用了静态方法");
 	}
 
-	//入口函数 注意bind后面的this
+	componentDidMount() {
+		console.info("componentDidMount:DOM已经加载完毕");
+	}
+
+	//入口函数 
 	render() {
 		const exa = {
 			margin: '20px 0',
@@ -61,42 +65,19 @@ export default class Example extends React.Component {
 		return (
 			<div style={exa}>
 				< input type = "text" ref = "tex" / >
-				< input type = "button"	onClick = {	this.btnClick.bind(this)} value = 'click me' /> 
+				< input type = "button"	onClick = {	this.btnClick } value = 'click me' /> 
 				{
-					this.props.num
+					this.props.min
 				} {
-					this.props.maxLoops
+					this.props.max
 				} {
 					this.state.title
-				}
-	
-				{
+				} {
 					this.state.data.map(item => {
-						return <span key={item.name}> {item.name}: {item.age} < /span>
+						return <span key={item.age}> {item.name}: {item.age} < /span>
 					})
 				} 
 			< /div>
 		)
 	}
-
-	componentDidMount() {
-		console.info("componentDidMount:DOM已经加载完毕");
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.info("componentWillRecieveProps:" + nextProps);
-	}
-
-	componentWillUpdate() {
-		console.info("componentWillUpdate");
-	}
-
-	componentDidUpdate() {
-		console.info("componentDidUpdate");
-	}
-
-	componentWillUnmount() {
-		console.info("componentWillUnmount");
-	}
-
 }
