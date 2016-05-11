@@ -55,7 +55,7 @@ export default class Example extends React.Component {
 		const exa = {
 			margin: '20px 0',
 			borderTop: '3px solid #7F8C8D',
-			padding: '10px 0',
+			padding: '20px 0',
 			background: '#ECF0F1'
 		}
 		return (
