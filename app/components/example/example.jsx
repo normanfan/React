@@ -8,7 +8,7 @@ export default class Example extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "i am a title",
+			title: "Click Me",
 			data: [{
 				name: "张三",
 				age: 28
@@ -32,7 +32,7 @@ export default class Example extends React.Component {
 	}
 
 	//静态方法
-	static customMethod(msg) {
+	customMethod = (msg) => {
 		console.log(msg);
 	}
 
@@ -41,13 +41,13 @@ export default class Example extends React.Component {
 		console.log(this); //this为该组件类
 		console.log(this.refs.tex); //this.refs.tex为组件里面索引为tex的
 		this.setState({
-			title: "i changed"
+			title: "have Clicked"
 		});
 	}
 
 	componentWillMount() {
 		console.info("componentWillMount:在初始化渲染执行之前立刻调用");
-		Example.customMethod("这里调用了静态方法");
+		this.customMethod("这里调用了静态方法");
 	}
 
 	componentDidMount() {
@@ -65,13 +65,11 @@ export default class Example extends React.Component {
 		return (
 			<div style={exa}>
 				< input type = "text" ref = "tex" / >
-				< input type = "button"	onClick = {	this.btnClick } value = 'click me' /> 
+				< input type = "button"	onClick = {	this.btnClick } value = {this.state.title} /> 
 				{
 					this.props.min
 				} {
 					this.props.max
-				} {
-					this.state.title
 				} {
 					this.state.data.map(item => {
 						return <span key={item.age}> {item.name}: {item.age} < /span>
