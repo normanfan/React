@@ -71,8 +71,8 @@ export default class Example extends React.Component {
 				} {
 					this.props.max
 				} {
-					this.state.data.map(item => {
-						return <span key={item.age}> {item.name}: {item.age} < /span>
+					this.state.data.map((item,index) => {
+						return <span key={index}> {item.name}: {item.age} < /span>
 					})
 				} 
 			< /div>
