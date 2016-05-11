@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
-import Range from './components/range.jsx';
+import './main.css';
+import Hello from './components/hello/hello.jsx';
+import Range from './components/range/range.jsx';
 
-ReactDOM.render(
-  <App />,
-  document.body.appendChild(document.createElement('div'))
-);
-ReactDOM.render(
-    <Range />,
-    document.getElementById('range')
-);
+ReactDOM.render( <Hello />, document.querySelector('#hello'));
+ReactDOM.render( <Range />, document.querySelector('#range'));

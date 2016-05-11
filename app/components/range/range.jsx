@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 /**
- * 滑动选择器组件
+ * 滑动选择器组件[ES5写法]
  * @prop {integer}  value       传入初始值
  * @prop {function} fnFeedback  用于接收处理结果的函数
  * @prop {integer}  min         可选，最小值，缺省为0
