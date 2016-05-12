@@ -8,7 +8,7 @@ export default class Example extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "Click Me",
+			title: "RESET",
 			data: [{
 				name: "张三",
 				age: 28
@@ -38,11 +38,11 @@ export default class Example extends React.Component {
 
 	//事件处理函数
 	btnClick = () => {
-		console.log(this); //this为该组件类
-		console.log(this.refs.tex); //this.refs.tex为组件里面索引为tex的
 		this.setState({
-			title: "You have clicked me!"
+			title: "RESET Again"
 		});
+		console.log(this.refs.tex.value); //打印当前组件里面索引为tex的值
+		this.refs.tex.value = '';
 	}
 
 	componentWillMount() {
