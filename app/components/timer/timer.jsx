@@ -24,8 +24,12 @@ export default class Timer extends React.Component {
         clearInterval(this.interval);  
     }
     render() {
+        const timerStyle = {
+            color:'red',
+            fontWeight: 'bold'
+        }
         return (
-            <div>Seconds Elapsed: {this.state.timer}</div>
+            <div>Attention Please! This page has been opened {'for'}: <span style={timerStyle}>{this.state.timer}</span> seconds.<hr/></div>
         )
     }
 }

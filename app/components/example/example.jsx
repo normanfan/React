@@ -41,7 +41,7 @@ export default class Example extends React.Component {
 		console.log(this); //this为该组件类
 		console.log(this.refs.tex); //this.refs.tex为组件里面索引为tex的
 		this.setState({
-			title: "have Clicked"
+			title: "You have clicked me!"
 		});
 	}
 
@@ -65,14 +65,12 @@ export default class Example extends React.Component {
 		return (
 			<div style={exa}>
 				< input type = "text" ref = "tex" / >
-				< input type = "button"	onClick = {	this.btnClick } value = {this.state.title} /> 
+				< input type = "button"	onClick = {	this.btnClick } value = {this.state.title} /><br/> 
+				{ 'MIN VALUE:' + this.props.min } <br/>
+				{ 'MAX VALUE:' + this.props.max } <br/>
 				{
-					this.props.min
-				} {
-					this.props.max
-				} {
 					this.state.data.map((item,index) => {
-						return <span key={index}> {item.name}: {item.age} < /span>
+						return <li key={index}> {item.name}: {item.age} < /li>
 					})
 				} 
 			< /div>
