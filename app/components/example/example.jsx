@@ -8,14 +8,7 @@ export default class Example extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "RESET",
-			data: [{
-				name: "张三",
-				age: 28
-			}, {
-				name: "李四",
-				age: 26
-			}]
+			title: "RESET"			
 		};
 	}
 
@@ -66,13 +59,8 @@ export default class Example extends React.Component {
 			<div style={exa}>
 				< input type = "text" ref = "tex" / >
 				< input type = "button"	onClick = {	this.btnClick } value = {this.state.title} /><br/> 
-				{ 'MIN VALUE:' + this.props.min } <br/>
-				{ 'MAX VALUE:' + this.props.max } <br/>
-				{
-					this.state.data.map((item,index) => {
-						return <li key={index}> {item.name}: {item.age} < /li>
-					})
-				} 
+				{ 'MIN VALUE:' + this.props.min } &nbsp;&nbsp;&nbsp;&nbsp;
+				{ 'MAX VALUE:' + this.props.max } <br/>				
 			< /div>
 		)
 	}

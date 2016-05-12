@@ -29,7 +29,7 @@ export default class Timer extends React.Component {
             fontWeight: 'bold'
         }
         return (
-            <div>Attention Please! This page has been opened {'for'}: <span style={timerStyle}>{this.state.timer}</span> seconds.<hr/></div>
+            <div>Attention Please! This page has been opened {'for'}: <span style={timerStyle}>{this.state.timer}</span> seconds.</div>
         )
     }
 }
