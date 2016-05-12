@@ -5,10 +5,17 @@ import React from 'react';
 class List extends React.Component {
     constructor(props) {
         super(props);
-        this.displayName = 'List';
     }
     render() {
-        return <div>List</div>;
+        return (
+            <ol>
+                {
+                    this.props.items.map((v,i) => {
+                        return <li key={i}>{v}</li>
+                    })
+                }
+            </ol>
+        )
     }
 }
 
@@ -22,14 +29,13 @@ export default class Todo extends React.Component {
         };
     }
 
-    onChange = (e) => {
-        this.setState({valueText: e.target.value});
+    valueChange = (e) => {
+        this.setState({valueText: e.target.value});  //捕获当前事件对象目标中的值，插入到valueText
     }
 
     addItem = (e) => {
         e.preventDefault();
-        var newItems = this.state.items.push(this.state.valueText);
-        console.log(newItems);
+        var newItems = this.state.items.concat(this.state.valueText);  //注意返回值，需要返回新数组
         this.setState({ 
             num: this.state.num + 1, 
             items: newItems,
@@ -41,8 +47,8 @@ export default class Todo extends React.Component {
         return (
             <div>
                 <div>
-                    <input type="text" value={this.state.valueText} onChange={this.onChange} />
-                    <button onClick={this.addItem}  ># {this.state.num}</button>
+                    <input type="text" value={this.state.valueText} onChange={this.valueChange} />
+                    <button onClick={this.addItem} ># {this.state.num}</button>
                 </div>
                 <List items={this.state.items} />
             </div>
