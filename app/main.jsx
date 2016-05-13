@@ -17,7 +17,7 @@ injectTapEventPlugin();
 const App = () => (
     <div>
       <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Hello name="Jason Bai" />
+        <Hello name="Welcome My Friend" />
       </MuiThemeProvider>
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Timer />

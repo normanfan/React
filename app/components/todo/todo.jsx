@@ -46,11 +46,19 @@ export default class Todo extends React.Component {
     }
 
     render() {
+        let btnStyle = {
+            height:28
+        };
+        let bfStyle = {
+            fontSize:20,
+            fontWeight:'bold',
+            fontStyle: 'italic'
+        }
         return (
-            <div>
+            <div id="todo">
                 <div>
-                    <TextField floatingLabelText="type what you want" type="text" value={this.state.valueText} onChange={this.valueChange} />
-                    <RaisedButton primary={true} onClick={this.addItem} ># {this.state.num}</RaisedButton>
+                    <TextField floatingLabelText="I Am Going To Do...." type="text" value={this.state.valueText} onChange={this.valueChange} />
+                    <RaisedButton primary={true} onClick={this.addItem} style={btnStyle} label={'# '+this.state.num} labelStyle={bfStyle} ></RaisedButton>
                 </div>
                 <List items={this.state.items} />
             </div>

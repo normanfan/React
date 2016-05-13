@@ -1,5 +1,4 @@
 import React from 'react';
-import './hello.css';
 
 /* Hello World 组件 */
 
@@ -9,7 +8,7 @@ export default class Hello extends React.Component {
   }
   render() {
     return (
-      <h1>Hello {this.props.name}</h1>
+      <h1 id="hello">Hey! {this.props.name}</h1>
     );
   }
 }

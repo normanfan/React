@@ -18,8 +18,8 @@ class Output extends React.Component {
     }
     render() {
         return (
-            <div>
-                <label>Input: </label><TextField floatingLabelText="Typing here" onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>&nbsp;
+            <div id="output">
+                <label>Input: </label><TextField floatingLabelText="Typing Something Here" onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>&nbsp;
                 <label>Output: </label><span>{this.state.v}</span><br/>
             </div>
         )
