@@ -1,4 +1,6 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 /*TODO组件*/
 
@@ -47,8 +49,8 @@ export default class Todo extends React.Component {
         return (
             <div>
                 <div>
-                    <input type="text" value={this.state.valueText} onChange={this.valueChange} />
-                    <button onClick={this.addItem} ># {this.state.num}</button>
+                    <TextField floatingLabelText="type what you want" type="text" value={this.state.valueText} onChange={this.valueChange} />
+                    <RaisedButton primary={true} onClick={this.addItem} ># {this.state.num}</RaisedButton>
                 </div>
                 <List items={this.state.items} />
             </div>

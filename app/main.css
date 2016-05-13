@@ -3,19 +3,3 @@ body {
     font-family: 'Microsoft YaHei';
     font-weight: normal;
 }
-#todo {
-    color: #333;
-    font-size: 18px;
-    background: #ECF0F1;
-    border-top: 3px solid #7F8C8D;
-    border-bottom: 3px solid #7F8C8D;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-#output {
-    padding: 10px 0;    
-}
-#output input{
-    margin-right: 15px;
-    color: #444;
-}
