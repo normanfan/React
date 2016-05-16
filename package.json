@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "babel-runtime": "6.x",
+    "history": "^2.1.1",
     "material-ui": "^0.15.0",
     "react": "15.x",
     "react-dom": "15.x",
+    "react-router": "^2.4.0",
     "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
