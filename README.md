@@ -1,10 +1,10 @@
 # Profile
 > REACT&ES6开发练习模板  
-> 技术栈：React + ReactDOM + ES6 + Material-UI + Babel + Webpack + NPM
+> 技术栈：React + ReactDOM + React-Router + ES6 + Material-UI + Babel + Webpack + NPM
 
 ### Version
 ```sh
-3.0.0
+3.5.0
 ```
 ### Features
 * 完善的开发环境配置

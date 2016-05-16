@@ -1,38 +1,34 @@
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Router, Route, Link, hashHistory } from 'react-router';
 
-import Hello from './components/hello/hello.jsx';
-import Timer from './components/timer/timer.jsx';
-import Todo from './components/todo/todo.jsx';
-import Output from './components/output/output.jsx';
-import Datepicker from './components/datepicker/datepicker.jsx';
+import Profile from './profile/profile.jsx';
+import About from './about/about.jsx';
 
 import './main.css';
 
-injectTapEventPlugin();
+class Init extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="leftMenu">
+          <Link to="/profile">Profile</Link>
+          <Link to="/about">About</Link>
+        </div>
+          <div id="rightWrap">
+            {this.props.children}
+          </div>
+      </div>
+    )
+  }
+}
 
-const App = () => (
-    <div>
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Hello name="Welcome My Friend" />
-      </MuiThemeProvider>
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Timer />
-      </MuiThemeProvider>
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Todo />
-      </MuiThemeProvider>
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Output />
-      </MuiThemeProvider>
-      <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Datepicker />
-      </MuiThemeProvider>
-    </div>
-);
 
-ReactDOM.render( <App />, document.querySelector('#app'));
-
+ReactDOM.render((
+  <Router history={hashHistory} >
+    <Route path="/" component={Init}>
+      <Route path="profile" component={Profile} />
+      <Route path="about" component={About} />
+    </Route>
+  </Router>
+), document.querySelector('#init'))
