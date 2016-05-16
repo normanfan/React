@@ -1,6 +1,6 @@
 {
   "name": "react",
-  "version": "1.2.0",
+  "version": "3.5.0",
   "description": "",
   "main": "app/main.jsx",
   "scripts": {
@@ -50,9 +50,9 @@
   "keywords": [
     "es6",
     "web app",
-    "boilerplate"
+    "react"
   ],
-  "author": "",
+  "author": "Bai Yanyun",
   "license": "MIT",
   "config": {
     "ghooks": {

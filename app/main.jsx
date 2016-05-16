@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, hashHistory } from 'react-router';
 
+// 引入单个页面
 import Profile from './profile/profile.jsx';
 import About from './about/about.jsx';
 
 import './main.css';
 
+// 定义SPA入口类
 class Init extends React.Component {
   render() {
     return (
@@ -23,7 +25,7 @@ class Init extends React.Component {
   }
 }
 
-
+// 渲染DOM
 ReactDOM.render((
   <Router history={hashHistory} >
     <Route path="/" component={Init}>

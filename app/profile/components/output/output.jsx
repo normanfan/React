@@ -2,7 +2,6 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 
 /*output组件*/
-
 class Output extends React.Component {
     constructor(props) {
         super(props);

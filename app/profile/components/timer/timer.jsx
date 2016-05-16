@@ -1,7 +1,6 @@
 import React from 'react';
 
 /*计时器组件*/
-
 export default class Timer extends React.Component {
     constructor(props) {
         super(props);

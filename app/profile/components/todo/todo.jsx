@@ -3,7 +3,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 /*TODO组件*/
-
 class List extends React.Component {
     constructor(props) {
         super(props);
