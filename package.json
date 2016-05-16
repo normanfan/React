@@ -1,5 +1,5 @@
 {
-  "name": "react-babel-webpack-boilerplate",
+  "name": "react",
   "version": "1.2.0",
   "description": "",
   "main": "app/main.jsx",
@@ -52,7 +52,7 @@
     "web app",
     "boilerplate"
   ],
-  "author": "Ruan Yifeng",
+  "author": "",
   "license": "MIT",
   "config": {
     "ghooks": {
