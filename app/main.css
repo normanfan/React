@@ -15,7 +15,8 @@
     line-height: 60px;
     background: #7F8C8D;
 }
-#leftMenu a:hover {
+#leftMenu a:hover,
+#leftMenu a.active {
     color: #fff;
     background: #34495E;
 }
