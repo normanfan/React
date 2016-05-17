@@ -1,6 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import {Form,Input,Button} from 'antd';
+const FormItem = Form.Item;
 
 /*TODO组件*/
 class List extends React.Component {
@@ -44,21 +44,15 @@ export default class Todo extends React.Component {
         });
     }
 
-    render() {
-        let btnStyle = {
-            height:28
-        };
-        let bfStyle = {
-            fontSize:20,
-            fontWeight:'bold',
-            fontStyle: 'italic'
-        }
+    render() {             
         return (
             <div id="todo">
-                <div>
-                    <TextField floatingLabelText="I Am Going To Do...." type="text" value={this.state.valueText} onChange={this.valueChange} />
-                    <RaisedButton primary={true} onClick={this.addItem} style={btnStyle} label={'# '+this.state.num} labelStyle={bfStyle} ></RaisedButton>
-                </div>
+                 <Form inline >
+                    <FormItem label="TODO APP：">
+                        <Input type="text" value={this.state.valueText} onChange={this.valueChange} placeholder="i am going to do"/>
+                    </FormItem>
+                    <Button onClick={this.addItem} type="primary" >{'# '+this.state.num}</Button>                           
+                </Form>
                 <List items={this.state.items} />
             </div>
         )

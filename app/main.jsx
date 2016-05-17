@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// 引入React-Router模块
 import { Router, Route, Link, hashHistory, IndexRoute, Redirect} from 'react-router';
 
 // 引入单个页面（包括嵌套的子页面）
 import Profile from './profile/profile.jsx';
 import About from './about/about.jsx';
 import Message from './about/message/message.jsx';
+
+// 引入Ant-Design样式
+import './antd.css';
 
 import './main.css';
 

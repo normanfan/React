@@ -1,5 +1,6 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
+import {Form,Input,Button,Row,Col} from 'antd';
+const FormItem = Form.Item;
 
 /*output组件*/
 class Output extends React.Component {
@@ -18,8 +19,20 @@ class Output extends React.Component {
     render() {
         return (
             <div id="output">
-                <label>Input: </label><TextField floatingLabelText="Typing Something Here" onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>&nbsp;
-                <label>Output: </label><span>{this.state.v}</span><br/>
+                <Form inline >
+                    <Row>
+                        <Col span="5">
+                            <FormItem label="Input：">
+                                <Input onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>
+                            </FormItem>
+                        </Col>                      
+                        <Col span="5">
+                            <FormItem label="Output：">
+                                <Input value={this.state.v} disabled/>
+                            </FormItem>
+                        </Col>
+                    </Row>
+                </Form>
             </div>
         )
     }

@@ -7,7 +7,7 @@ export default class Hello extends React.Component {
   }
   render() {
     return (
-      <h1 id="hello">Hey! Man {this.props.name}</h1>
+      <h1 id="hello">Hey! Man.... {this.props.name}</h1>
     );
   }
 }
