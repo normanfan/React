@@ -21,9 +21,9 @@
     background: #34495E;
 }
 #rightWrap {
-    width: -webkit-calc(100% - 150px);
-    width: calc(100%-110px);
-    float: left;
-    padding: 20px 0;
-    margin-left: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
+    padding: 20px 20px 0 20px;
+    margin-left: 110px;
 }
