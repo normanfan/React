@@ -11,23 +11,31 @@ const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
 
 class About extends React.Component {
-    handleChange = (value) => {
-        console.log(`selected ${value}`);
+    constructor(props) {
+        super(props);
+        this.state = {
+            selV:['请选择']
+        }        
     }
-    onChangeDate = (value, dateString) => {
+    selChange = (value) => {        
+        console.log(value);
+    }
+    dateChange = (value, dateString) => {
         console.log('From: ', value[0], ', to: ', value[1]);
     }
-    onChange = (e) => {
+    checkChange = (e) => {
         console.log(`checked = ${e.target.checked}`);
     }
     componentDidMount() {
         fetch('json/selectData.json')
-            .then(function(response) {
-                return response.json()
-              }).then(function(json) {
-                console.log(json)
-              }).catch(function(ex) {
-                console.log(ex)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data.obj);          
+            })
+            .catch((ex) => {
+                console.log(ex);
             });
     }
     
@@ -41,24 +49,23 @@ class About extends React.Component {
                     <Form inline>
                         <Row type="flex" justify="start" gutter={16} align="middle">
                             <Col span="5">
-                                <Select showSearch
-                                    placeholder="广告系列名称"
-                                    optionFilterProp="children"
-                                    notFoundContent="无法找到"
-                                    onChange={this.handleChange}>
-                                    <Option value="jack">杰克</Option>
-                                    <Option value="lucy">露西</Option>
-                                    <Option value="tom">汤姆</Option>
+                                <Select onChange={this.selChange} placeholder="请选择广告系列">
+                                    {
+                                        this.state.selV.map(v => { return <Option key="v" value="v">v</Option> })
+                                    }
+                                    // <Option value="广告系列一">广告系列一</Option>
+                                    // <Option value="广告系列二">广告系列二</Option>
+                                    // <Option value="广告系列三">广告系列三</Option>
                                 </Select>
                             </Col>
                             <Col span="5">
                                 <FormItem>
-                                    <RangePicker onChange={this.onChangeDate} />
+                                    <RangePicker onChange={this.dateChange} />
                                 </FormItem>
                             </Col>
                             <Col span="3">
                                 <FormItem>
-                                    <Checkbox defaultChecked={false} onChange={this.onChange}>过滤无数据广告</Checkbox>
+                                    <Checkbox defaultChecked={false} onChange={this.checkChange}>过滤无数据广告</Checkbox>
                                 </FormItem>
                             </Col>
                             <Col span="2">
