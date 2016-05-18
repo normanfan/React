@@ -10,7 +10,7 @@ import About from './about/about.jsx';
 import Message from './about/message/message.jsx';
 
 // 引入Ant-Design样式
-import './antd.css';
+import 'antd/dist/antd.css';
 
 import './main.css';
 
