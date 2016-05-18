@@ -1,6 +1,6 @@
 # Profile
 > REACT&ES6开发练习模板  
-> 技术栈：React + ReactDOM + React-Router + ES6 + Ant-UI + Babel + Webpack + NPM
+> 技术栈：React + ReactDOM + React-Router + ES6 + Ant-UI + Fetch + Babel + Webpack + NPM
 
 ### Version
 ```sh

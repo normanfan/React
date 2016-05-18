@@ -20,7 +20,8 @@
     "history": "^2.1.1",
     "react": "15.x",
     "react-dom": "15.x",
-    "react-router": "^2.4.0"
+    "react-router": "^2.4.0",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "6.x",
@@ -40,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "0.x",
     "eslint-plugin-react": "4.x",
     "ghooks": "^1.0.3",
+    "mockjs": "^1.0.1-beta2",
     "open-browser-webpack-plugin": "0.0.2",
     "style-loader": "~0.13.0",
     "validate-commit-msg": "2.x",

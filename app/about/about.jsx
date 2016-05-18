@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button,Checkbox,DatePicker,Select,Form,Row,Col,Table} from 'antd';
 
+import 'whatwg-fetch';
+
 import {data, columns} from './tableData.jsx';
 import './about.css';
 
@@ -17,6 +19,16 @@ class About extends React.Component {
     }
     onChange = (e) => {
         console.log(`checked = ${e.target.checked}`);
+    }
+    componentDidMount() {
+        fetch('json/selectData.json')
+            .then(function(response) {
+                return response.json()
+              }).then(function(json) {
+                console.log(json)
+              }).catch(function(ex) {
+                console.log(ex)
+            });
     }
     
     render() {
