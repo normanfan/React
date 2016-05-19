@@ -1,30 +1,34 @@
 #leftMenu {
-    width: 110px;
+    width: 100px;
     float: left;
     text-align: center;
-    padding: 20px 0;
+    padding: 0;
     height: 100%;
-    background: #95A5A6;
+    background: #222;
+}
+#logo {
+    margin: 26px 0;
 }
 #leftMenu a {
     display: block;
     text-decoration: none;
     font-weight: bold;
-    color: #ddd;
+    color: #fff;
     height: 60px;
     line-height: 60px;
     background: #7F8C8D;
     font-size: 18px;
+    margin-bottom: 5px;
 }
 #leftMenu a:hover,
 #leftMenu a.active {
     color: #fff;
-    background: #34495E;
+    background: #3498DB;
 }
 #rightWrap {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;    
     padding: 20px 20px 0 20px;
-    margin-left: 110px;
+    margin-left: 100px;
 }

@@ -4,13 +4,13 @@ import {Button,Checkbox,DatePicker,Select,Form,Row,Col,Table} from 'antd';
 import 'whatwg-fetch';
 
 import {data, columns} from '../data/tableData.jsx';
-import './about.css';
+import './antdes.css';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
 
-class About extends React.Component {
+class Antdes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -89,4 +89,4 @@ class About extends React.Component {
   }
 }
 
-export default About;
+export default Antdes;
