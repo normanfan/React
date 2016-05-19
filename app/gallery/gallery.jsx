@@ -9,7 +9,7 @@ export default class Gallery extends React.Component {
     }
     render() {
         return (
-            <h1>第三个页面</h1>
+            <h1>建设中..........</h1>
         )
     }       
 }

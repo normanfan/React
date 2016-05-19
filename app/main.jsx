@@ -9,6 +9,7 @@ import Profile from './profile/profile.jsx';
 import Antdes from './antdes/antdes.jsx';
 import Message from './antdes/message/message.jsx';
 import Gallery from './gallery/gallery.jsx';
+import Last from './last/last.jsx';
 
 // 引入Ant-Design样式
 import 'antd/dist/antd.css';
@@ -22,8 +23,9 @@ class Init extends React.Component {
         <div id="leftMenu">
           <div id="logo"><img src='images/logo.jpg' width="100"/></div>
           <Link to="/profile" activeClassName="active">Profile</Link>
-          <Link to="/antdes" activeClassName="active" title="Ant Design">AntDes</Link>
+          <Link to="/antdes" activeClassName="active" >AntDes</Link>
           <Link to="/gallery" activeClassName="active">Gallery</Link>
+          <Link to="/last" activeClassName="active">Last</Link>
         </div>
           <div id="rightWrap">
             {this.props.children}
@@ -35,15 +37,16 @@ class Init extends React.Component {
 
 // 配置路由
 ReactDOM.render((
-  <Router history={hashHistory} >
-    <Route path="/" component={Init}>
-      <IndexRoute component={Profile}/>
-      <Route path="profile" component={Profile} />
-      <Route path="antdes" component={Antdes}>
-        <Route path="/message" component={Message} />  //子视图
-        <Redirect from="message" to="/message" />   //重定向，兼容旧URL
-      </Route>
-      <Route path="gallery" component={Gallery} />
-    </Route>
-  </Router>
+    <Router history={hashHistory} >
+        <Route path="/" component={Init}>
+            <IndexRoute component={Profile}/>
+            <Route path="profile" component={Profile} />
+            <Route path="antdes" component={Antdes}>
+                <Route path="/message" component={Message} />  //子视图
+                <Redirect from="message" to="/message" />   //重定向，兼容旧URL
+            </Route>
+            <Route path="gallery" component={Gallery} />
+            <Route path="last" component={Last} />
+        </Route>
+    </Router>
 ), document.querySelector('#init'))
