@@ -3,7 +3,7 @@ import {Button,Checkbox,DatePicker,Select,Form,Row,Col,Table} from 'antd';
 
 import 'whatwg-fetch';
 
-import {data, columns} from './tableData.jsx';
+import {data, columns} from '../data/tableData.jsx';
 import './about.css';
 
 const FormItem = Form.Item;
@@ -17,6 +17,7 @@ class About extends React.Component {
             selV:['请选择']
         }        
     }
+    
     selChange = (value) => {        
         console.log(value);
     }
@@ -27,7 +28,7 @@ class About extends React.Component {
         console.log(`checked = ${e.target.checked}`);
     }
     componentDidMount() {
-        fetch('json/selectData.json')
+        fetch('data/selectData.json')
             .then((response) => {
                 return response.json();
             })
@@ -49,13 +50,10 @@ class About extends React.Component {
                     <Form inline>
                         <Row type="flex" justify="start" gutter={16} align="middle">
                             <Col span="5">
-                                <Select onChange={this.selChange} placeholder="请选择广告系列">
-                                    {
-                                        this.state.selV.map(v => { return <Option key="v" value="v">v</Option> })
-                                    }
-                                    // <Option value="广告系列一">广告系列一</Option>
-                                    // <Option value="广告系列二">广告系列二</Option>
-                                    // <Option value="广告系列三">广告系列三</Option>
+                                <Select onChange={this.selChange} placeholder="请选择广告系列">                                   
+                                    <Option value="广告系列一">广告系列一</Option>
+                                    <Option value="广告系列二">广告系列二</Option>
+                                    <Option value="广告系列三">广告系列三</Option>
                                 </Select>
                             </Col>
                             <Col span="5">
@@ -84,7 +82,7 @@ class About extends React.Component {
                     {this.props.children}
                 </div>
                 <div id="table">
-                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} />
+                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} />                    
                 </div>
             </div>
         )

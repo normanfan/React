@@ -4,7 +4,10 @@ import {Icon} from 'antd';
 const columns = [{
   title: '姓名',
   dataIndex: 'name',
-  render: text => <a href="#">{text}&nbsp;&nbsp;&nbsp;<Icon type="edit" /></a>,
+  render: 
+    text => (
+        <span><a href="#">{text}&nbsp;&nbsp;</a><Icon type="edit" /></span>
+    ),
 }, {
   title: '年龄',
   dataIndex: 'age',

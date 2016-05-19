@@ -14,6 +14,7 @@
     height: 60px;
     line-height: 60px;
     background: #7F8C8D;
+    font-size: 18px;
 }
 #leftMenu a:hover,
 #leftMenu a.active {

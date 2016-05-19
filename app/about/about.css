@@ -4,3 +4,9 @@
     padding-left: 20px;
     background: #F7F7F7;
 }
+table tr span i {
+    color: #F0656F;    
+}
+table tr span i:hover {
+    cursor: pointer;
+}
