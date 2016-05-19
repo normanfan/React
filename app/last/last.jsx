@@ -1,5 +1,5 @@
 import React from 'react';
-import './animate.css';
+import '../animate.css';
 import './last.css';
 
 export default class Last extends React.Component {

@@ -7,9 +7,10 @@
     background: #222;
 }
 #logo {
+    display: block;
     margin: 26px 0;
 }
-#leftMenu a {
+#leftMenu a.navItem {
     display: block;
     text-decoration: none;
     font-weight: bold;
@@ -20,8 +21,8 @@
     font-size: 18px;
     margin-bottom: 5px;
 }
-#leftMenu a:hover,
-#leftMenu a.active {
+#leftMenu a.navItem:hover,
+#leftMenu a.navItem.active {
     color: #fff;
     background: #3498DB;
 }

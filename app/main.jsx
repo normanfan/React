@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // 引入React-Router模块
-import { Router, Route, Link, hashHistory, IndexRoute, Redirect} from 'react-router';
+import { Router, Route, Link, hashHistory, IndexRoute, Redirect,IndexLink} from 'react-router';
 
 // 引入单个页面（包括嵌套的子页面）
+import Welcome from './welcome/welcome.jsx';
 import Profile from './profile/profile.jsx';
 import Antdes from './antdes/antdes.jsx';
 import Message from './antdes/message/message.jsx';
@@ -21,11 +22,11 @@ class Init extends React.Component {
     return (
       <div>
         <div id="leftMenu">
-          <div id="logo"><img src='images/logo.jpg' width="100"/></div>
-          <Link to="/profile" activeClassName="active">Profile</Link>
-          <Link to="/antdes" activeClassName="active" >AntDes</Link>
-          <Link to="/gallery" activeClassName="active">Gallery</Link>
-          <Link to="/last" activeClassName="active">Last</Link>
+          <IndexLink to="/" id="logo"><img src='images/logo.jpg' width="100"/></IndexLink>
+          <Link to="/profile" activeClassName="active" className="navItem">Profile</Link>
+          <Link to="/antdes" activeClassName="active" className="navItem">AntDes</Link>
+          <Link to="/gallery" activeClassName="active" className="navItem">Gallery</Link>
+          <Link to="/last" activeClassName="active" className="navItem">Last</Link>
         </div>
           <div id="rightWrap">
             {this.props.children}
@@ -39,7 +40,7 @@ class Init extends React.Component {
 ReactDOM.render((
     <Router history={hashHistory} >
         <Route path="/" component={Init}>
-            <IndexRoute component={Profile}/>
+            <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />
             <Route path="antdes" component={Antdes}>
                 <Route path="/message" component={Message} />  //子视图
