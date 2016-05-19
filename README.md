@@ -1,10 +1,10 @@
 # Profile
-> REACT&ES6开发练习模板  
-> 技术栈：React + ReactDOM + React-Router + ES6 + Ant-UI + Fetch + Babel + Webpack + NPM
+> REACT&ES6练习项目  
+> 技术栈：React + ReactDOM + React-Router + ES6 + Ant-UI + Fetch + Babel + Webpack + NPM + Animate.css
 
 ### Version
 ```sh
-4.0.0
+5.0.0
 ```
 ### Features
 * 配置完善的开发环境
