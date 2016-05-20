@@ -1,9 +1,13 @@
 import React from 'react';
-import {Button,Checkbox,DatePicker,Select,Form,Row,Col,Table} from 'antd';
+import {Button,Checkbox,DatePicker,Select,Switch,Form,Row,Col,Table} from 'antd';
+import { Link } from 'react-router'
 
+// 引入Fetch
 import 'whatwg-fetch';
 
+// 引入表格数据
 import {data, columns} from '../data/tableData.jsx';
+
 import './antdes.css';
 
 const FormItem = Form.Item;
@@ -14,19 +18,32 @@ class Antdes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selV:['请选择']
+            selV:['请选择'],
+            route:'/message'
         }        
     }
     
+    // 选择广告系列
     selChange = (value) => {        
         console.log(value);
     }
+
+    // 打印所选日期
     dateChange = (value, dateString) => {
         console.log('From: ', value[0], ', to: ', value[1]);
     }
+
+    // 是否过滤无数据广告
     checkChange = (e) => {
         console.log(`checked = ${e.target.checked}`);
     }
+
+    // 切换子视图
+    toggleSub = () => {
+        this.state.route = (this.state.route === '/message' ? '/antdes' : '/message');
+    }
+
+    // 组件渲染后获取外界数据
     componentDidMount() {
         fetch('data/selectData.json')
             .then((response) => {
@@ -79,10 +96,20 @@ class Antdes extends React.Component {
 
                         </Row>
                     </Form>
-                    {this.props.children}
                 </div>
                 <div id="table">
-                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} />                    
+                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} size="middle"/>                    
+                </div>
+                <div id="nest">
+                    <Row type="flex" align="middle">
+                        <Col span="3">
+                            <span>是否开启穿梭框？</span>
+                        </Col>
+                        <Col span="2">
+                            <Link to={this.state.route} ><Switch checkedChildren="开" unCheckedChildren="关" onChange={this.toggleSub} /></Link>
+                        </Col>
+                    </Row>
+                    {this.props.children}
                 </div>
             </div>
         )

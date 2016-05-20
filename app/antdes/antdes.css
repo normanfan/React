@@ -10,3 +10,6 @@ table tr span i {
 table tr span i:hover {
     cursor: pointer;
 }
+#nest span {
+    font-size: 16px;
+}
