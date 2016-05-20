@@ -67,7 +67,7 @@ class Antdes extends React.Component {
                     <Form inline>
                         <Row type="flex" justify="start" gutter={16} align="middle">
                             <Col span="5">
-                                <Select onChange={this.selChange} placeholder="请选择广告系列">                                   
+                                <Select onChange={this.selChange} placeholder="请选择广告系列" size="large">                                   
                                     <Option value="广告系列一">广告系列一</Option>
                                     <Option value="广告系列二">广告系列二</Option>
                                     <Option value="广告系列三">广告系列三</Option>

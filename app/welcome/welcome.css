@@ -3,4 +3,5 @@
     font-size: 70px;
     width: 200px;
     margin: 16% auto;
+    transition: color 1s;
 }
