@@ -17,19 +17,19 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '薛蛮子',
+  name: '张三',
   age: 52,
-  address: '朝阳区湖底公园1号监狱',
+  address: '朝阳区湖底公园1号',
 }, {
   key: '2',
-  name: '房祖名',
+  name: '李四',
   age: 33,
-  address: '朝阳区湖底公园2号监狱',
+  address: '朝阳区湖底公园2号',
 }, {
   key: '3',
-  name: '李代沫',
+  name: '王五',
   age: 29,
-  address: '朝阳区湖底公园3号监狱',
+  address: '朝阳区湖底公园3号',
 }];
 
 export {data, columns};
