@@ -20,13 +20,13 @@ class Output extends React.Component {
         return (
             <div id="output">
                 <Form inline >
-                    <Row>
+                    <Row type="flex" justify="start" align="middle">
                         <Col span="5">
                             <FormItem label="Input：">
                                 <Input onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>
                             </FormItem>
                         </Col>                      
-                        <Col span="5">
+                        <Col span="6">
                             <FormItem label="Output：">
                                 <Input value={this.state.v} disabled/>
                             </FormItem>
