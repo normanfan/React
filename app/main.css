@@ -12,6 +12,22 @@
     display: block;
     margin: 26px 0;
 }
+#logo img {
+    display: block;
+    margin: 0 auto;
+    -webkit-transition:all 1s;
+    -moz-transition:all 1s;
+    -o-transition:all 1s;
+    -ms-transition:all 1s;
+    transition:all 1s;
+}
+#logo img:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
 #leftMenu a.navItem {
     display: block;
     text-decoration: none;

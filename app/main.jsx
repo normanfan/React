@@ -22,7 +22,7 @@ class Init extends React.Component {
     return (
       <div>
         <div id="leftMenu">
-          <IndexLink to="/" id="logo"><img src='images/logo.jpg' width="100"/></IndexLink>
+          <IndexLink to="/" id="logo"><img src='images/logo.png' width="50"/></IndexLink>
           <Link to="/profile" activeClassName="active" className="navItem">Profile</Link>
           <Link to="/antdes" activeClassName="active" className="navItem">AntDes</Link>
           <Link to="/gallery" activeClassName="active" className="navItem">Gallery</Link>
