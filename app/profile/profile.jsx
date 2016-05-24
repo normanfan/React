@@ -12,7 +12,7 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div>
-                <Hello name="What's Up ?" />
+                <Hello />
                 <Timer />
                 <Todo />
                 <Output />
