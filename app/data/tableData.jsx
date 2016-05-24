@@ -17,17 +17,17 @@ const columns = [{
 }];
 const data = [{
   key: '1',
-  name: '张三',
-  age: 52,
+  name: '钢铁侠',
+  age: 42,
   address: '朝阳区湖底公园1号',
 }, {
   key: '2',
-  name: '李四',
+  name: '蝙蝠侠',
   age: 33,
   address: '朝阳区湖底公园2号',
 }, {
   key: '3',
-  name: '王五',
+  name: '蜘蛛侠',
   age: 29,
   address: '朝阳区湖底公园3号',
 }];

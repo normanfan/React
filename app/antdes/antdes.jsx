@@ -18,8 +18,10 @@ class Antdes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selV:[''],
-            route:'/message'
+            selV: [''],
+            ischecked: false,
+            visible: false,
+            route: '/message'
         }        
     }
     
@@ -29,22 +31,31 @@ class Antdes extends React.Component {
     }
 
     // 打印所选日期
-    dateChange = (value, dateString) => {
+    dateChange = (value) => {
         console.log('From: ', value[0], ', to: ', value[1]);
     }
 
     // 是否过滤无数据广告
     checkChange = (e) => {
         console.log(`checked = ${e.target.checked}`);
+        this.setState({ischecked: e.target.checked});
     }
+
+    // 查询提示框
+    confirmMsg = () => {
+        confirm(`是否过滤无数据广告：${this.state.ischecked}`);
+    }    
 
     // 切换子视图
     toggleSub = () => {
-        this.state.route = (this.state.route === '/message' ? '/antdes' : '/message');
+        let routeURL = (this.state.route === '/message' ? '/antdes' : '/message');
+        this.setState({route:routeURL});
     }
 
     // 组件渲染后获取外界数据(GET)
     componentDidMount() {
+        console.log(this.state);
+
         fetch('data/selectData.json')
             .then((response) => {
                 console.log(response);
@@ -54,7 +65,7 @@ class Antdes extends React.Component {
                 this.setState({selV:data.obj});         
             })
             .catch((error) => {
-                console.log("Oops, error");
+                console.log(error.message);
             });
     }
     
@@ -88,10 +99,10 @@ class Antdes extends React.Component {
                             </Col>
                             <Col span="2">
                                 <FormItem>
-                                    <Button>查询</Button>
+                                    <Button onClick={this.confirmMsg}>查询</Button>
                                 </FormItem>
                             </Col>
-                            <Col span="4">
+                            <Col span="3" push="5">
                                 <FormItem>
                                     <Button type="primary" size="large">新建广告系列</Button>
                                 </FormItem>
@@ -113,7 +124,7 @@ class Antdes extends React.Component {
                         </Col>
                     </Row>
                     {this.props.children}
-                </div>
+                </div>               
             </div>
         )
   }
