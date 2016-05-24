@@ -1,0 +1,13 @@
+#carouselPic {
+    height: 75px;
+}
+#carouselPic .slick-slide {
+    background: #3498DB;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+#carouselPic .slick-slide h3 {
+    height: 75px;
+    line-height: 75px;
+} 

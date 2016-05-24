@@ -1,6 +1,6 @@
 # Profile
 > REACT&ES6练习项目  
-> 技术栈：React + JSX + React-Router + ES6 + Ant-UI + Fetch + Babel + Webpack + NPM + Animate.css
+> 技术栈：React + JSX + React-Router + ES6 + Ant-UI + Fetch + Babel + Webpack + NPM + Animate.css + MockJs
 
 ### Version
 5.0.0
