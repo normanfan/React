@@ -18,7 +18,7 @@ class Antdes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selV:['请选择'],
+            selV:[''],
             route:'/message'
         }        
     }
@@ -43,17 +43,18 @@ class Antdes extends React.Component {
         this.state.route = (this.state.route === '/message' ? '/antdes' : '/message');
     }
 
-    // 组件渲染后获取外界数据
+    // 组件渲染后获取外界数据(GET)
     componentDidMount() {
         fetch('data/selectData.json')
             .then((response) => {
-                return response.json();
+                console.log(response);
+                return response.json();  //解析JSON数据并返回，相当于JSON.parse(jsonText)
             })
             .then((data) => {
-                console.log(data.obj);          
+                this.setState({selV:data.obj});         
             })
-            .catch((ex) => {
-                console.log(ex);
+            .catch((error) => {
+                console.log("Oops, error");
             });
     }
     
@@ -68,9 +69,11 @@ class Antdes extends React.Component {
                         <Row type="flex" justify="start" gutter={16} align="middle">
                             <Col span="5">
                                 <Select onChange={this.selChange} placeholder="请选择广告系列" size="large">                                   
-                                    <Option value="广告系列一">广告系列一</Option>
-                                    <Option value="广告系列二">广告系列二</Option>
-                                    <Option value="广告系列三">广告系列三</Option>
+                                    {
+                                        this.state.selV.map((v,i) => {
+                                            return <Option key={i} value={v}>{v}</Option>                                                    
+                                        })
+                                    }
                                 </Select>
                             </Col>
                             <Col span="5">
