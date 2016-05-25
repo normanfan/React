@@ -2,8 +2,12 @@ import React from 'react';
 import {Button,Checkbox,DatePicker,Select,Switch,Form,Row,Col,Table} from 'antd';
 import { Link } from 'react-router'
 
-// 引入Fetch
+// 引入标准Fetch及IE兼容依赖
 import 'whatwg-fetch';
+import 'es5-shim/es5-shim.js';
+import 'es5-shim/es5-sham.js';
+import 'es6-promise/dist/es6-promise.min.js';
+import 'fetch-ie8/fetch.js';
 
 // 引入表格数据
 import {data, columns} from '../data/tableData.jsx';
