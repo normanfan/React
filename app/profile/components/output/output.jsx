@@ -4,7 +4,7 @@ import {Form,Input,Button,Row,Col} from 'antd';
 const FormItem = Form.Item;
 
 /*output组件*/
-class Output extends React.Component {
+export default class Output extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,15 +22,11 @@ class Output extends React.Component {
             <div id="output">
                 <Form inline >
                     <Row type="flex" justify="start" align="middle">
-                        <Col span="12">
-                            <FormItem>
-                                <Input addonBefore="Input：" onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>
-                            </FormItem>
+                        <Col span="10">                            
+                            <Input addonBefore="Input：" onChange={this.changeV} value={this.state.v} onFocus={this.focusMe}/>                            
                         </Col>                      
-                        <Col span="12">
-                            <FormItem>
-                                <Input addonBefore="Output：" value={this.state.v} disabled/>
-                            </FormItem>
+                        <Col span="10" push="1">                            
+                            <Input addonBefore="Output：" value={this.state.v} disabled/>                            
                         </Col>
                     </Row>
                 </Form>
@@ -39,4 +35,3 @@ class Output extends React.Component {
     }
 }
 
-export default Output;
