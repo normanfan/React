@@ -8,7 +8,6 @@ import { Router, Route, Link, hashHistory, IndexRoute, Redirect,IndexLink} from 
 import Welcome from './welcome/welcome.jsx';
 import Profile from './profile/profile.jsx';
 import Antdes from './antdes/antdes.jsx';
-import Message from './antdes/message/message.jsx';
 import Gallery from './gallery/gallery.jsx';
 import Last from './last/last.jsx';
 
@@ -45,10 +44,7 @@ ReactDOM.render((
         <Route path="/" component={Init}>
             <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />
-            <Route path="antdes" component={Antdes}>
-                <Route path="/message" component={Message} />  //子视图
-                <Redirect from="message" to="/message" />   //重定向，兼容旧URL
-            </Route>
+            <Route path="antdes" component={Antdes} />
             <Route path="gallery" component={Gallery} />
             <Route path="last" component={Last} />
         </Route>

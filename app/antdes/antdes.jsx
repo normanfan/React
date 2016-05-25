@@ -23,8 +23,7 @@ export default class Antdes extends React.Component {
             sDate:'',
             eDate:'',
             ischecked: false,
-            visible: false,
-            route: '/message'
+            visible: false
         }        
     }
     
@@ -49,13 +48,7 @@ export default class Antdes extends React.Component {
         confirm(
             `所选广告系列：${this.state.selValue}\n是否过滤无数据广告：${this.state.ischecked}\n起始日期：${this.state.sDate}\n结束日期：${this.state.eDate}`
         );
-    }    
-
-    // 切换子视图
-    toggleSub = () => {
-        let routeURL = (this.state.route === '/message' ? '/antdes' : '/message');
-        this.setState({route:routeURL});
-    }
+    } 
 
     // 组件渲染后获取外界数据(GET)
     componentDidMount() {
@@ -75,6 +68,9 @@ export default class Antdes extends React.Component {
     render() {
         const rowSelection = {
             //空配置项
+        };
+        const pagination = {
+            size:'large'
         };
         return (
             <div id="wrap">
@@ -115,19 +111,8 @@ export default class Antdes extends React.Component {
                     </Form>
                 </div>
                 <div id="table">
-                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} size="middle"/>                    
-                </div>
-                <div id="nest">
-                    <Row type="flex" align="middle">
-                        <Col span="3">
-                            <span>是否开启穿梭框？</span>
-                        </Col>
-                        <Col span="2">
-                            <Link to={this.state.route} ><Switch checkedChildren="开" unCheckedChildren="关" onChange={this.toggleSub} /></Link>
-                        </Col>
-                    </Row>
-                    {this.props.children}
-                </div>               
+                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} size="middle" pagination={pagination}/>                    
+                </div>                              
             </div>
         )
   }

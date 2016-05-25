@@ -1,13 +1,16 @@
 #header {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 15px 0;
     padding-left: 20px;
     background: #ECECEC;
 }
-table tr span i {
-    color: #2ECC71;    
+table tr td,
+table tr th {
+    font-family: '微软雅黑';
+    font-size: 14px;
 }
 table tr span i:hover {
+    color: #2ECC71;    
     cursor: pointer;
 }
 #nest span {
