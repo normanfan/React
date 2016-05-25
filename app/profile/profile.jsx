@@ -13,7 +13,7 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div>
-                <Hello />
+                <Hello text="Web Developer"/>
                 <Timer />
                 <Todo />
                 <Output />
