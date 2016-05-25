@@ -12,28 +12,31 @@ import Message from './antdes/message/message.jsx';
 import Gallery from './gallery/gallery.jsx';
 import Last from './last/last.jsx';
 
-// 引入Ant-Design样式
+// 引入Ant-Design样式 & Animate.CSS样式
 import 'antd/dist/antd.css';
+import 'animate.css/animate.min.css';
+
+// 引入主体样式文件
 import './main.css';
 
 // 配置导航
 class Init extends React.Component {
-  render() {
-    return (
-      <div>
-        <div id="leftMenu">
-          <IndexLink to="/" id="logo"><img src='images/logo.png' width="50"/></IndexLink>
-          <Link to="/profile" activeClassName="active" className="navItem">Profile</Link>
-          <Link to="/antdes" activeClassName="active" className="navItem">AntDes</Link>
-          <Link to="/gallery" activeClassName="active" className="navItem">Gallery</Link>
-          <Link to="/last" activeClassName="active" className="navItem">Last</Link>
-        </div>
-          <div id="rightWrap">
-            {this.props.children}
-          </div>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                <div id="leftMenu">
+                    <IndexLink to="/" id="logo"><img src='images/logo.png' width="50"/></IndexLink>
+                    <Link to="/profile" activeClassName="active" className="navItem">Profile</Link>
+                    <Link to="/antdes" activeClassName="active" className="navItem">AntDes</Link>
+                    <Link to="/gallery" activeClassName="active" className="navItem">Gallery</Link>
+                    <Link to="/last" activeClassName="active" className="navItem">Last</Link>
+                </div>
+                <div id="rightWrap">
+                    {this.props.children}
+                </div>
+            </div>
+        )
+    }
 }
 
 // 配置路由

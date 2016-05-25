@@ -1,8 +1,6 @@
 import React from 'react';
-import '../animate.css';
-import './welcome.css';
 
-/*彩色标题组件*/
+/*彩色动感标题组件*/
 export default class Welcome extends React.Component {
     constructor(props) {
         super(props);
@@ -30,7 +28,12 @@ export default class Welcome extends React.Component {
 
     render() {
         let colorStyle = {
-            color:this.state.col
+            color:this.state.col,
+            textAlign: 'center',
+            fontSize: 70,
+            width: 200,
+            margin: '16% auto',
+            transition: 'color 1s'
         }
         return (
             <h1 className="animated rotateIn" id="welcome" style={colorStyle}>你&nbsp;好</h1>

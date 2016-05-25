@@ -28,7 +28,7 @@ export default class Timer extends React.Component {
             fontWeight: 'bold'
         }
         return (
-            <div id="timer">This page has been opened {'for'}: <span style={timerStyle}>{this.state.timer}</span> seconds.</div>
+            <div id="timer" className="animated bounceInLeft">This page has been opened {'for'}: <span style={timerStyle}>{this.state.timer}</span> seconds.</div>
         )
     }
 }

@@ -8,6 +8,7 @@ import Output from './components/output/output.jsx';
 
 import './profile.css';
 
+/*简介父组件*/
 export default class Profile extends React.Component {
     render() {
         return (

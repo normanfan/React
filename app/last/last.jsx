@@ -1,12 +1,10 @@
 import React from 'react';
-import '../animate.css';
 import './last.css';
 
+/*结尾组件*/
 export default class Last extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = {
-        }        
+        super(props);    
     }
     render() {
         return (

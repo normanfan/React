@@ -14,11 +14,14 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
 
-class Antdes extends React.Component {
+export default class Antdes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             selV: [''],
+            selValue:'',
+            sDate:'',
+            eDate:'',
             ischecked: false,
             visible: false,
             route: '/message'
@@ -27,23 +30,25 @@ class Antdes extends React.Component {
     
     // 选择广告系列
     selChange = (value) => {        
-        console.log(value);
+        this.setState({selValue: value});
     }
 
-    // 打印所选日期
+    // 选择日期范围
     dateChange = (value) => {
-        console.log('From: ', value[0], ', to: ', value[1]);
+        this.setState({sDate: value[0].toLocaleDateString()});
+        this.setState({eDate: value[1].toLocaleDateString()});
     }
 
-    // 是否过滤无数据广告
+    // 过滤无数据广告
     checkChange = (e) => {
-        console.log(`checked = ${e.target.checked}`);
         this.setState({ischecked: e.target.checked});
     }
 
     // 查询提示框
     confirmMsg = () => {
-        confirm(`是否过滤无数据广告：${this.state.ischecked}`);
+        confirm(
+            `所选广告系列：${this.state.selValue}\n是否过滤无数据广告：${this.state.ischecked}\n起始日期：${this.state.sDate}\n结束日期：${this.state.eDate}`
+        );
     }    
 
     // 切换子视图
@@ -54,8 +59,6 @@ class Antdes extends React.Component {
 
     // 组件渲染后获取外界数据(GET)
     componentDidMount() {
-        console.log(this.state);
-
         fetch('data/selectData.json')
             .then((response) => {
                 console.log(response);
@@ -71,7 +74,7 @@ class Antdes extends React.Component {
     
     render() {
         const rowSelection = {
-            //配置项
+            //空配置项
         };
         return (
             <div id="wrap">
@@ -129,5 +132,3 @@ class Antdes extends React.Component {
         )
   }
 }
-
-export default Antdes;

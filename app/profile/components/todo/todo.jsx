@@ -1,8 +1,9 @@
 import React from 'react';
 import {Form,Input,Button} from 'antd';
+
 const FormItem = Form.Item;
 
-/*TODO组件*/
+/*列表组件*/
 class List extends React.Component {
     constructor(props) {
         super(props);
@@ -11,15 +12,14 @@ class List extends React.Component {
         return (
             <ol>
                 {
-                    this.props.items.map((v,i) => {
-                        return <li key={i}>{v}</li>
-                    })
+                    this.props.items.map((v,i) => { return <li key={i}>{v}</li> })
                 }
             </ol>
         )
     }
 }
 
+/*TODO组件*/
 export default class Todo extends React.Component {
     constructor(props) {
         super(props);

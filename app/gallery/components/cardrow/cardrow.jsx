@@ -16,9 +16,7 @@ export default class Cardrow extends React.Component {
                         this.props.data.map((v,i) => {
                             return (
                                 <Col span="6" key={i}>
-                                    <Card title={v.area} bordered={false}>
-                                        <img src={v.num} />
-                                    </Card>
+                                    <Card title={v.area} bordered={false}><img src={v.num} /></Card> 
                                 </Col>
                             )
                         })

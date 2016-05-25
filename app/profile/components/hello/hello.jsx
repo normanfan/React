@@ -1,6 +1,6 @@
 import React from 'react';
 
-/* Hello World 组件 */
+/* 变换标题组件 */
 export default class Hello extends React.Component {
   	constructor(props) {
   	  	super(props);
@@ -20,7 +20,7 @@ export default class Hello extends React.Component {
   				i = 0;
   			}
   		}  	
-  		this.interval = setInterval(changeText, 2000); 
+  		this.interval = setInterval(changeText, 1500); 
   	}
 
   	render() {
@@ -29,7 +29,7 @@ export default class Hello extends React.Component {
   			paddingLeft: '37%'
   		}
   	  	return (
-  	  	 	<h1 id="hello" style={hStyle}>Hi, I am {this.state.text}</h1>
+  	  	 	<h1 id="hello" style={hStyle} className="animated flipInX">Hi, I am {this.state.text}</h1>
   	  	);
   	}
 }
